@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_game"
+    tools:context=".presentation.fragments.game.GameFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/game_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar_game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_game"
+            style="@style/back_arrow_style_game"
+            android:src="@drawable/ic_back_arrow_game" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/width_box_time"
+            android:layout_height="@dimen/height_box_style"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/transparent"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/stroke_card_size">
+
+            <Chronometer
+                android:id="@+id/time_game"
+                style="@style/time_game_style" />
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_game"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/game_toolbar">
+
+        <ImageView
+            android:id="@+id/ball"
+            android:layout_width="@dimen/ball_size"
+            android:layout_height="@dimen/ball_size"
+            android:src="@drawable/ball_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/first_explose"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/first_explosion"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <eightbitlab.com.blurview.BlurView
+        android:id="@+id/blur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="5dp"
+        android:visibility="gone">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/large_margin"
+            android:backgroundTint="@color/transparent"
+            app:cardCornerRadius="@dimen/card_radius"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/stroke_card_size">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/score_label"
+                    style="@style/text_app_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:text="@string/your_score"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/score_text"
+                    style="@style/text_app_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/score_label"
+                    app:layout_constraintStart_toStartOf="@id/score_label"
+                    app:layout_constraintTop_toBottomOf="@id/score_label"
+                    tools:text="01:15" />
+
+                <TextView
+                    android:id="@+id/enter_name_label"
+                    style="@style/text_app_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:text="@string/enter_your_name"
+                    android:textSize="23sp"
+                    app:layout_constraintEnd_toEndOf="@id/score_text"
+                    app:layout_constraintStart_toStartOf="@id/score_text"
+                    app:layout_constraintTop_toBottomOf="@id/score_text" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/enter_name_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/large_margin"
+                    android:layout_marginTop="@dimen/min_margin"
+                    android:layout_marginEnd="@dimen/large_margin"
+                    android:backgroundTint="@color/transparent"
+                    app:cardCornerRadius="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/enter_name_label"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="@dimen/stroke_card_size">
+
+                    <EditText
+                        android:id="@+id/enter_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/impact"
+                        android:gravity="center"
+                        android:maxLength="15"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:padding="5dp"
+                        android:textColor="@color/white" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/accept_score"
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="@dimen/large_margin"
+                    android:layout_marginBottom="@dimen/large_margin"
+                    android:src="@drawable/button_style_menu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/enter_name_box" />
+
+                <ProgressBar
+                    android:id="@+id/progress_result"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/accept_score"
+                    app:layout_constraintTop_toTopOf="@id/accept_score"
+                    app:layout_constraintEnd_toEndOf="@id/accept_score"
+                    app:layout_constraintBottom_toBottomOf="@id/accept_score"
+                    style="@style/progress_bar_app_style" />
+
+                <TextView
+                    android:id="@+id/save_label"
+                    style="@style/text_app_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:textSize="28sp"
+                    app:layout_constraintBottom_toBottomOf="@id/accept_score"
+                    app:layout_constraintEnd_toEndOf="@id/accept_score"
+                    app:layout_constraintStart_toStartOf="@id/accept_score"
+                    app:layout_constraintTop_toTopOf="@id/accept_score" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </eightbitlab.com.blurview.BlurView>
+</androidx.constraintlayout.widget.ConstraintLayout>

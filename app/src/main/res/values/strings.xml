@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BallClicker</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="result">Result</string>
+    <string name="politic">Politic</string>
+    <string name="quit">Quit</string>
+    <string name="your_score">Your score</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="your_result_is_saved">Your result is saved</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_error">Save error</string>
+    <string name="name_is_empty">Name is empty</string>
+    <string name="no_results_yet">No results yet</string>
+</resources>

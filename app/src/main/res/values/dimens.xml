@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_menu_width">230dp</dimen>
+    <dimen name="button_menu_height">110dp</dimen>
+    <dimen name="menu_text_size">40sp</dimen>
+    <dimen name="margin_text_menu">15dp</dimen>
+    <dimen name="height_toolbar_game">120dp</dimen>
+    <dimen name="width_box_time">180dp</dimen>
+    <dimen name="height_box_style">80dp</dimen>
+    <dimen name="card_radius">18dp</dimen>
+    <dimen name="large_margin">30dp</dimen>
+    <dimen name="ball_size">100dp</dimen>
+    <dimen name="stroke_card_size">4dp</dimen>
+    <dimen name="min_margin">10dp</dimen>
+    <dimen name="splash_icon_size">100dp</dimen>
+</resources>

@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BallClicker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="Theme.BallClicker" parent="Base.Theme.BallClicker" />
+
+    <style name="SplashTheme"  parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_theme</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        <item name="android:statusBarColor">#00000000</item>
+    </style>
+</resources>
